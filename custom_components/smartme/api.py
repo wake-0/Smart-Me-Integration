@@ -43,5 +43,5 @@ class SmartMeApiClient:
                     raise SmartMeAuthError("Invalid username or password")
                 response.raise_for_status()
                 return await response.json()
-        except aiohttp.ClientError as err:
+        except (aiohttp.ClientError, TimeoutError) as err:
             raise SmartMeApiError(str(err)) from err
