@@ -107,7 +107,15 @@ class SmartMeCounterSensor(SmartMeEntity, SensorEntity):
 
     @property
     def native_value(self) -> float | None:
-        return self._device.get("counterReading")
+        # Bidirectional meters (e.g. a PV feed-in point) report the general
+        # counterReading with a sign indicating flow direction. The Energy
+        # dashboard requires a strictly non-negative, ever-increasing total,
+        # so prefer the dedicated export counter when present and otherwise
+        # fall back to the absolute value.
+        value = self._device.get("counterReadingExport")
+        if value is None:
+            value = self._device.get("counterReading")
+        return abs(value) if value is not None else None
 
     @property
     def native_unit_of_measurement(self) -> str | None:
