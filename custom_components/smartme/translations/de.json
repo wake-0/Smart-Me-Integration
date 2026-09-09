@@ -1,0 +1,52 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Smart-me Konto",
+        "description": "Melde dich mit deinem Smart-me-Konto an, um deine Geräte einzubinden.",
+        "data": {
+          "username": "Benutzername (E-Mail)",
+          "password": "Passwort"
+        }
+      },
+      "devices": {
+        "title": "Geräte auswählen",
+        "description": "Wähle aus, welche Smart-me-Geräte in Home Assistant eingebunden werden sollen.",
+        "data": {
+          "devices": "Geräte"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Benutzername oder Passwort ist falsch.",
+      "cannot_connect": "Verbindung zur Smart-me API fehlgeschlagen.",
+      "no_devices": "Es wurden keine Geräte in diesem Smart-me-Konto gefunden."
+    },
+    "abort": {
+      "already_configured": "Dieses Smart-me-Konto ist bereits eingerichtet."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "description": "Wähle aus, welche Smart-me-Geräte in Home Assistant eingebunden werden sollen.",
+        "data": {
+          "devices": "Geräte"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Verbindung zur Smart-me API fehlgeschlagen."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "counter": {
+        "name": "Zählerstand"
+      },
+      "power": {
+        "name": "Leistung"
+      }
+    }
+  }
+}

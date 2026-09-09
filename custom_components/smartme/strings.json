@@ -1,0 +1,52 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Smart-me account",
+        "description": "Sign in with your smart-me account to connect your devices.",
+        "data": {
+          "username": "Username (email)",
+          "password": "Password"
+        }
+      },
+      "devices": {
+        "title": "Select devices",
+        "description": "Choose which smart-me devices should be added to Home Assistant.",
+        "data": {
+          "devices": "Devices"
+        }
+      }
+    },
+    "error": {
+      "invalid_auth": "Invalid username or password.",
+      "cannot_connect": "Could not connect to the smart-me API.",
+      "no_devices": "No devices were found in this smart-me account."
+    },
+    "abort": {
+      "already_configured": "This smart-me account is already configured."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "description": "Choose which smart-me devices should be added to Home Assistant.",
+        "data": {
+          "devices": "Devices"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Could not connect to the smart-me API."
+    }
+  },
+  "entity": {
+    "sensor": {
+      "counter": {
+        "name": "Counter reading"
+      },
+      "power": {
+        "name": "Power"
+      }
+    }
+  }
+}

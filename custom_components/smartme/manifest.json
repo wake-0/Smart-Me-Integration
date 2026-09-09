@@ -1,0 +1,11 @@
+{
+  "domain": "smartme",
+  "name": "Smart-me",
+  "codeowners": [],
+  "config_flow": true,
+  "documentation": "https://github.com/DEIN-GITHUB-NAME/Smart-Me-Integration",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/DEIN-GITHUB-NAME/Smart-Me-Integration/issues",
+  "requirements": [],
+  "version": "1.0.0"
+}
