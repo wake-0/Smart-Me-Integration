@@ -3,9 +3,9 @@
   "name": "Smart-me",
   "codeowners": [],
   "config_flow": true,
-  "documentation": "https://github.com/DEIN-GITHUB-NAME/Smart-Me-Integration",
+  "documentation": "https://github.com/wake-0/Smart-Me-Integration",
   "iot_class": "cloud_polling",
-  "issue_tracker": "https://github.com/DEIN-GITHUB-NAME/Smart-Me-Integration/issues",
+  "issue_tracker": "https://github.com/wake-0/Smart-Me-Integration/issues",
   "requirements": [],
   "version": "1.0.0"
 }
