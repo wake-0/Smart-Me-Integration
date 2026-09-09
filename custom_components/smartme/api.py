@@ -15,6 +15,14 @@ class SmartMeAuthError(SmartMeApiError):
     """Raised when the smart-me API rejects the credentials."""
 
 
+def _normalize(device: dict) -> dict:
+    """Normalize smart-me's PascalCase JSON keys (e.g. "Id") to camelCase
+    (e.g. "id"), which is what the OpenAPI schema documents and what the
+    rest of this integration is written against.
+    """
+    return {(key[:1].lower() + key[1:]): value for key, value in device.items()}
+
+
 class SmartMeApiClient:
     """Wrapper around the smart-me `/Devices` endpoints (Basic Auth)."""
 
@@ -26,11 +34,13 @@ class SmartMeApiClient:
 
     async def async_get_devices(self) -> list[dict]:
         """Return all devices visible to this account."""
-        return await self._request("/Devices")
+        devices = await self._request("/Devices")
+        return [_normalize(device) for device in devices]
 
     async def async_get_device(self, device_id: str) -> dict:
         """Return a single device by its ID."""
-        return await self._request(f"/Devices/{device_id}")
+        device = await self._request(f"/Devices/{device_id}")
+        return _normalize(device)
 
     async def _request(self, path: str):
         try:
